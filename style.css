@@ -35,6 +35,7 @@ body {
     display: flex;
 }
 .headerMyP span{
+    color: white;
     margin-left: 5vw;
 }
 
@@ -58,14 +59,14 @@ body {
 }
 
 .todo__title {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-    box-shadow: 1px 1px 5px var(--secondary-color);
+    color: var(--secondary-color);
 
-    font-size: 3rem;
+    font-family: cursive;
+    font-size: 5rem;
+    letter-spacing: 6px;
 
     width: 100%;
-    height: 80px;
+    height: 12vh;
     margin-top: 50px;
 
     justify-content: center;
@@ -85,8 +86,9 @@ body {
     box-shadow: 1px 1px 5px var(--secondary-color);
 
     width: 100%;
-    height: 60px;
-    padding: 5px;
+    height: 6.5vh;
+    padding: 10px;
+    border-radius: 3px;
 
     display: flex;
     justify-content: space-between;
@@ -112,8 +114,8 @@ body {
 
 .todo__item > input[type='image'],
 .todo__item > input[type='checkbox'] {
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 25px;
 }
 
 
@@ -122,23 +124,30 @@ body {
 }
 
 .todo__new-item{
-    background-color: #dadafb;
+    background-color: #dadafb18;
 
     font: inherit;
 
-    width: 100%;
-    height: 70px;
+    width: 55%;
+    height: 8vh;
     padding: 10px 0;
-    margin: 10px;
+    margin: auto;
 
     display: flex;
+
+    
     justify-content: space-evenly;
+    position: fixed;
+    top: 90%;
+    transform: translateY(-50%); 
 }
 
 .todo__new-item > input{
-    background-color: #dadafb;
+    background-color: #b0b0f00a;
+    color: var(--tertiary-color);
 
     font: inherit;
+    text-align: center;
 
     width: 80%;
 
@@ -149,4 +158,5 @@ body {
 .todo__new-item > input::placeholder {
     font-style: italic;
     font-weight: normal;
+    color: var(--tertiary-color);
 }
