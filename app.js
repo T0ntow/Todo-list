@@ -1,10 +1,5 @@
 'use strict'
 
-// let banco = [
-//     {'tarefa': 'Estudar JS', 'status': ''},
-//     {'tarefa': 'netflix', 'status': 'checked'}
-// ];
-
 const getBanco = () => JSON.parse(localStorage.getItem ('todoList')) ?? [];
 const setBanco = (banco) => localStorage.setItem ('todoList', JSON.stringify(banco));
 
@@ -35,7 +30,7 @@ const atualizarTela = () => {
 const inserirItem = (evento) => {
     const tecla = evento.key;
     const texto = evento.target.value;
-    if (tecla === 'Enter'){
+    if (tecla === 'Enter' ){
         const banco = getBanco();
         banco.push ({'tarefa': texto, 'status': ''});
         setBanco(banco);
@@ -43,6 +38,15 @@ const inserirItem = (evento) => {
         evento.target.value = '';   //limpar tarefa
     }
 }
+const enviarItem = () => {
+    const textElement = document.getElementById('newItem')
+    const texto = textElement.value;
+    console.log('texto: ',texto);
+    const banco = getBanco();
+    banco.push ({'tarefa': texto, 'status': ''});
+    setBanco(banco);
+    atualizarTela();     
+} 
 
 const removerItem = (indice) => {
     const banco = getBanco();
@@ -69,7 +73,6 @@ const clickItem = (evento) => {
         atualizarItem (indice);
     }
 }
-
 
 document.getElementById('newItem').addEventListener('keypress', inserirItem);
 document.getElementById('todoList').addEventListener('click', clickItem);

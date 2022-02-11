@@ -149,7 +149,7 @@ body {
     transform: translateY(-50%); 
 }
 
-.todo__new-item > input{
+.todo__new-item > input[type='text']{
     background-color: #b0b0f00a;
     color: var(--tertiary-color);
 
@@ -167,7 +167,7 @@ body {
     font-weight: normal;
     color: var(--tertiary-color);
 }
-.todo__new-item button{
+.todo__new-item button[type='submit'] {
     background-color: var(--secondary-color);
 
     text-indent: 8px;
@@ -180,6 +180,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+   
 .todo__new-item button:hover{
     background-color: var(--tertiary-color);    
 }
@@ -212,7 +213,7 @@ body {
     .todo__new-item input{
         height: 90%;
     }
-    .todo__new-item button{
+    .todo__new-item input[type='submit']{
         height: 50%;
         width: 50%;
         
