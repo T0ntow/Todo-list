@@ -30,7 +30,7 @@ const atualizarTela = () => {
 const inserirItem = (evento) => {
     const tecla = evento.key;
     const texto = evento.target.value;
-    if (tecla === 'Enter' ){
+    if (tecla === 'Enter'){
         const banco = getBanco();
         banco.push ({'tarefa': texto, 'status': ''});
         setBanco(banco);
@@ -46,6 +46,7 @@ const enviarItem = () => {
     banco.push ({'tarefa': texto, 'status': ''});
     setBanco(banco);
     atualizarTela();     
+    textElement.value = '';
 } 
 
 const removerItem = (indice) => {
