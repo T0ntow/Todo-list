@@ -67,7 +67,7 @@ body {
     font-size: 5rem;
     letter-spacing: 6px;
 
-    margin-top: 50px;
+    margin-top: 30px;
 
     justify-content: center;
     align-items: center;
@@ -75,21 +75,47 @@ body {
 }
 
 .todo__list {
+    box-shadow: 0px 1px 5px 1px #3071f277;
+
     width: 100%;
+    height: 50vh;
+    padding: 15px 0;
 
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
+    overflow-y: scroll;
+    z-index: 1;
+    border-radius: 10px 0px 0px 50px / 10px 0px 0px 25px;
 }
+
+/* BARRA DE ROLAGEM-todo_list */
+
+.todo__list::-webkit-scrollbar {
+    width: 10px;
+    
+}
+  
+.todo__list::-webkit-scrollbar-track {
+    background: var(--quaternary-color);  
+}
+  
+.todo__list::-webkit-scrollbar-thumb {
+    background-color: rgb(167, 167, 167);
+    border-radius: 20px; 
+}
+/*  */
 
 /* ITEM */
 
 .todo__item{
-    box-shadow: 1px 1px 5px var(--secondary-color);
+    box-shadow: 2px 2px 0px var(--secondary-color);
+    background-color: #2E2E31;
     text-align: start;
 
-    width: 100%;
-    min-height: 6.5vh;
+    width: 95%;
+    height: 5vh;
     padding: 10px;
     border-radius: 3px;
 
@@ -97,6 +123,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .todo__item > div {
     color: white;
 
@@ -145,7 +172,7 @@ body {
     
     justify-content: space-evenly;
     position: fixed;
-    top: 85%;
+    top: 90%;
     transform: translateY(-50%); 
 }
 
@@ -184,6 +211,7 @@ body {
 .todo__new-item button:hover{
     background-color: var(--tertiary-color);    
 }
+
 
 /* RESPONSIVIDADE */
 
