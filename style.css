@@ -81,6 +81,9 @@ body {
         opacity: 0%;
         transform: translateY(-14vh);
     }
+    80%{
+        opacity: 40%;
+    }
     100% {
         opacity: 100%;
         transform: translateY(0);

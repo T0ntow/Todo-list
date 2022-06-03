@@ -26,27 +26,44 @@ const atualizarTela = () => {
     const banco =  getBanco();
     banco.forEach ( (item, indice) => criarItem (item.tarefa, item.status, indice));
 }
-
+    
 const inserirItem = (evento) => {
     const tecla = evento.key;
     const texto = evento.target.value;
     if (tecla === 'Enter'){
-        const banco = getBanco();
-        banco.push ({'tarefa': texto, 'status': ''});
-        setBanco(banco);
-        atualizarTela();
-        evento.target.value = '';   //limpar tarefa
+        if('texto: ',texto != ''){
+            const banco = getBanco();
+            banco.push ({'tarefa': texto, 'status': ''});
+            setBanco(banco);
+            atualizarTela();
+            evento.target.value = '';
+        }
     }
 }
+
 const enviarItem = () => {
     const textElement = document.getElementById('newItem')
     const texto = textElement.value;
-    console.log('texto: ',texto);
     const banco = getBanco();
-    banco.push ({'tarefa': texto, 'status': ''});
-    setBanco(banco);
-    atualizarTela();     
-    textElement.value = '';
+    if('texto: ',texto != ''){
+        banco.push ({'tarefa': texto, 'status': ''});
+        setBanco(banco);
+        atualizarTela();     
+        textElement.value = '';
+    }
+}   
+const enviarTitulo = () => {
+    const textElement = document.getElementById('newItem')
+    const texto = textElement.value;
+
+    const banco = getBanco();
+    if('texto: ',texto != ''){
+        banco.push ({'tarefa': texto, 'status': ''});
+        setBanco(banco);
+        atualizarTela();     
+        textElement.value = '';
+    }
+
 } 
 
 const removerItem = (indice) => {
@@ -75,7 +92,7 @@ const clickItem = (evento) => {
     }
 }
 
-document.getElementById('newItem').addEventListener('keypress', inserirItem);
+document.getElementById('newItem').addEventListener('keypress', inserirItem, enviarTitulo);
 document.getElementById('todoList').addEventListener('click', clickItem);
 
 atualizarTela();
