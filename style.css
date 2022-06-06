@@ -156,7 +156,14 @@ body {
     filter: invert(100%);
     transition-duration: .5s;
 }
-
+#imagex{
+    width: 25px;
+    height: 25px;
+    scale: 1;
+}
+#imagex:hover{
+    transition-duration: .5s;
+}
 .todo__item > input[type='image'],
 .todo__item > input[type='checkbox'] {
     width: 30px;
